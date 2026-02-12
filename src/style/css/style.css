@@ -1,0 +1,62 @@
+body{
+    text-align: center;
+    padding:5%;
+}
+button{
+    border-radius:10px;
+    border-width: 0;
+    color:#FFFFFF;
+}
+button:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+li{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:5%;
+    height:8vh;
+    align-items:center;
+}
+
+
+#add{
+    width:70vw;
+    height:10vh;
+    margin-bottom:5%;
+}
+#add-btn{
+    background-color: rgb(0, 94, 255);
+    margin-bottom:5%;
+    width:30vw;
+        padding:2%
+
+}
+.title{
+    width:40vw;
+    font-size: larger;
+}
+.btn{
+    display:flex;
+    justify-content:center;
+    gap:5%;
+    width:40vw;
+}
+#completed-btn{
+    background-color: rgb(0, 94, 255);
+    padding:10px;
+}
+#edit-btn{
+    background-color: rgb(255, 213, 0);
+    padding:10px;
+}
+#delete-btn{
+    background-color: red;
+    padding:10px
+}
+
+
+
+
+
+
