@@ -22,12 +22,7 @@ RUN docker-php-ext-install \
 # Composerのインストール（ライブラリ管理）
 COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
 
-# MailHog用のmsmtp設定（メール送信テスト）
-RUN echo "account mailhog" > /etc/msmtprc && \
-    echo "host mailhog" >> /etc/msmtprc && \
-    echo "port 1025" >> /etc/msmtprc && \
-    echo "account default : mailhog" >> /etc/msmtprc && \
-    echo 'sendmail_path = "/usr/bin/msmtp -t"' > /usr/local/etc/php/conf.d/sendmail.ini
+
 
 # エラー表示を有効化、OPcacheは無効
 RUN echo "display_errors = On" > /usr/local/etc/php/conf.d/learning.ini && \

@@ -10,6 +10,8 @@ services:
       - ./docker/php/php.ini:/usr/local/etc/php/php.ini:ro
     depends_on:
       - db
+    networks:
+      - todolist-network
 
   # Webサーバー（Nginx）
   web:
@@ -24,6 +26,8 @@ services:
       - ./src:/var/www/html:cached
     depends_on:
       - php
+    networks:
+      - todolist-network
 
   # データベースサーバー（MySQL）
   db:
@@ -42,9 +46,16 @@ services:
     command: >
       mysqld
       --skip-character-set-client-handshake
+    networks:
+      - todolist-network
 
 
 
 # ボリューム設定
 volumes:
   mysql-data:
+
+# ネットワーク設定
+networks:
+  todolist-network:
+    driver: bridge
