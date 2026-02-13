@@ -18,9 +18,13 @@ li{
     height:8vh;
     align-items:center;
 }
+h1{
+    padding:5%;
+}
 
 
-#add{
+#add,
+.edit-input{
     width:70vw;
     height:10vh;
     margin-bottom:5%;

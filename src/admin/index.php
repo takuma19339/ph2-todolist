@@ -21,15 +21,14 @@ require __DIR__. '/dbconnect.php';
         <li class="todo">
             <div class="title"><?php echo $row['title']."　";?></div>
             <div class="btn">
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="./update/index.php" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
-                <button type="submit" id="completed-btn"><?php echo $row['completed'] ? "complete" : "uncomplete"; ?></button>
+                <button type="submit" id="completed-btn"><?php echo $row['completed'] ? "complete" : "Undo"; ?></button>
             </form>
-            <form method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
-                <button type="submit" id="edit-btn">edit</button>
-            </form>
-            <form method="post" enctype="multipart/form-data">
+            <a href="./edit/index.php?id=<?php echo $row['id']; ?>">
+                <button type="button" id="edit-btn">edit</button>
+            </a>
+            <form method="post" action="./delete/index.php" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                 <button type="submit" id="delete-btn">delete</button>
             </form>

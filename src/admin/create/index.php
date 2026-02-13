@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }else{
         echo "タイトルを入力してください。";
     }
-    header('Location: ../index.php');
+    header('Location: /admin/index.php');
     exit();
 }
 ?>
